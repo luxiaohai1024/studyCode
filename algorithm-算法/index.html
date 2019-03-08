@@ -56,6 +56,13 @@
     <h1>所用的时间</h1>
     <div id="SelectionSortTime"></div>
     
+    <h1>插入排序后的数组</h1>
+    <span>
+        <ul id="insertionSortArr"></ul>
+    </span>
+    
+    <h1>所用的时间</h1>
+    <div id="insertionSortTime"></div>
 
 
     <script src="./SortTestHelper/UtilMethod.js"></script>
@@ -90,6 +97,21 @@
         MyUtilMethod.testSort("Selection Sort", SelectionSort, natureArr, "SelectionSortTime")
     </script>
 
-    
+    <!-- 插入排序 （Insertion Sort）
+    打牌的时候插入牌类似这种算法。
+
+    以8、6、2、3、1、5、7、4为例
+
+    1. 第一个数不动（8、6、2、3、1、5、7、4）
+    2. 第二个数如果比第一个数小，和第一个数交换位置（6、8、2、3、1、5、7、4）
+    3. 第三个数如果比第二个数小，和第二个数交换位置（6、2、8、3、1、5、7、4）
+    4. 之前第三的数在第二的位置，将其与第一个数比较，如果比第一个数小，和第一个数交换位置（2、6、8、3、1、5、7、4）
+    5. 以此类推（2、3、6、8、1、5、7、4） -->
+
+    <script src="./insertionSort.js"></script>
+    <script>
+        MyUtilMethod.printArray("insertionSortArr",insertionSort(natureArr));
+        MyUtilMethod.testSort("insertion Sort", insertionSort, natureArr, "insertionSortTime")
+    </script>
 </body>
 </html>
