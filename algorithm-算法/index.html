@@ -93,7 +93,8 @@
     3. 以此类推，直到排序完成。 -->
     <script src="./SelectionSort.js"></script>
     <script>
-        MyUtilMethod.printArray("SelectionSortArr",SelectionSort(natureArr));
+        var SelectionSortNewArr = SelectionSort(natureArr);
+        MyUtilMethod.printArray("SelectionSortArr",SelectionSortNewArr);
         MyUtilMethod.testSort("Selection Sort", SelectionSort, natureArr, "SelectionSortTime")
     </script>
 
@@ -110,7 +111,9 @@
 
     <script src="./insertionSort.js"></script>
     <script>
-        MyUtilMethod.printArray("insertionSortArr",insertionSort(natureArr));
+        console.log(natureArr);
+        var insertionSortNewArr = insertionSort(natureArr);
+        MyUtilMethod.printArray("insertionSortArr",insertionSortNewArr);
         MyUtilMethod.testSort("insertion Sort", insertionSort, natureArr, "insertionSortTime")
     </script>
 </body>

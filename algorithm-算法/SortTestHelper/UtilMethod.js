@@ -30,13 +30,17 @@
         //测试代码性能的函数
         "testSort" : function(methodName, methodFun, arr, showDivId){
             let start = new Date().getTime();
-            methodFun(arr);
+            let newArr = methodFun(arr);
             let end = new Date().getTime();
-            if(this.isSorted(arr)){
+            if(this.isSorted(newArr)){
                 $('#' + showDivId).append(`${methodName} -->${end - start}`);
             } else {
                 $('#' + showDivId).append(`fail to Sort`);
             }
+        },
+        //拷贝数组
+        "copeArray" : function (arr) {
+            return arr.slice();
         }
      };
     window.MyUtilMethod = MyUtilMethod;
