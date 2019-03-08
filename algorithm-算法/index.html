@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>算法测试</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            text-decoration: none;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+      }
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-        }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
 
-        ul{
-            width: 100%;
-        }
+      ul {
+        width: 100%;
+      }
 
-        li {
-            padding: 10px;
-            float: left;
-        }
-        h1,
-        div {
-            float: left;
-            width: 100%;
-            height: 50px;
-        }
+      li {
+        padding: 10px;
+        float: left;
+      }
+      h1,
+      div {
+        float: left;
+        width: 100%;
+        height: 50px;
+      }
 
-        span {
-            display: block;
-            width: 100%;
-            height: 200px;
-            overflow: scroll;
-        }
+      span {
+        display: block;
+        width: 100%;
+        height: 200px;
+        overflow: scroll;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>生成随机数组</h1>
     <span>
-        <ul id="natureArr"></ul>
+      <ul id="natureArr"></ul>
     </span>
-    
+
     <h1>选择排序后的数组</h1>
     <span>
-        <ul id="SelectionSortArr"></ul>
+      <ul id="SelectionSortArr"></ul>
     </span>
-    
+
     <h1>所用的时间</h1>
     <div id="SelectionSortTime"></div>
-    
+
     <h1>插入排序后的数组</h1>
     <span>
-        <ul id="insertionSortArr"></ul>
+      <ul id="insertionSortArr"></ul>
     </span>
-    
+
     <h1>所用的时间</h1>
     <div id="insertionSortTime"></div>
 
+    <h1>冒泡排序后的数组</h1>
+    <span>
+      <ul id="bubbleSortArr"></ul>
+    </span>
+
+    <h1>所用的时间</h1>
+    <div id="bubbleSortTime"></div>
 
     <script src="./SortTestHelper/UtilMethod.js"></script>
     <script src="./scripts/jquery.js"></script>
     <script>
-        var n = 10000;
-        var natureArr = MyUtilMethod.generateRandomArray(n, 0, n);
-        MyUtilMethod.printArray('natureArr', natureArr)
+      var n = 10000;
+      var natureArr = MyUtilMethod.generateRandomArray(n, 0, n);
+      MyUtilMethod.printArray("natureArr", natureArr);
     </script>
 
     <!-- 排序算法 -->
@@ -93,9 +100,14 @@
     3. 以此类推，直到排序完成。 -->
     <script src="./SelectionSort.js"></script>
     <script>
-        var SelectionSortNewArr = SelectionSort(natureArr);
-        MyUtilMethod.printArray("SelectionSortArr",SelectionSortNewArr);
-        MyUtilMethod.testSort("Selection Sort", SelectionSort, natureArr, "SelectionSortTime")
+      var SelectionSortNewArr = SelectionSort(natureArr);
+      MyUtilMethod.printArray("SelectionSortArr", SelectionSortNewArr);
+      MyUtilMethod.testSort(
+        "Selection Sort",
+        SelectionSort,
+        natureArr,
+        "SelectionSortTime"
+      );
     </script>
 
     <!-- 插入排序 （Insertion Sort）
@@ -111,10 +123,35 @@
 
     <script src="./insertionSort.js"></script>
     <script>
-        console.log(natureArr);
-        var insertionSortNewArr = insertionSort(natureArr);
-        MyUtilMethod.printArray("insertionSortArr",insertionSortNewArr);
-        MyUtilMethod.testSort("insertion Sort", insertionSort, natureArr, "insertionSortTime")
+      console.log(natureArr);
+      var insertionSortNewArr = insertionSort(natureArr);
+      MyUtilMethod.printArray("insertionSortArr", insertionSortNewArr);
+      MyUtilMethod.testSort(
+        "insertion Sort",
+        insertionSort,
+        natureArr,
+        "insertionSortTime"
+      );
     </script>
-</body>
+
+    <!-- 冒泡排序 （Bubble Sort）
+    冒泡排序算法的原理如下：
+    
+     1. 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+     2. 对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+     3. 针对所有的元素重复以上的步骤，除了最后一个。
+     4. 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 -->
+
+    <script src="./bubbleSort.js"></script>
+    <script>
+      var bubbleSortNewArr = bubbleSort(natureArr);
+      MyUtilMethod.printArray("bubbleSortArr", bubbleSortNewArr);
+      MyUtilMethod.testSort(
+        "bubble Sort",
+        bubbleSort,
+        natureArr,
+        "bubbleSortTime"
+      );
+    </script>
+  </body>
 </html>
