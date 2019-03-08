@@ -27,18 +27,34 @@
             padding: 10px;
             float: left;
         }
-        h1 {
+        h1,
+        div {
             float: left;
             width: 100%;
             height: 50px;
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            height: 200px;
+            overflow: scroll;
         }
     </style>
 </head>
 <body>
     <h1>生成随机数组</h1>
-    <ul id="natureArr"></ul>
+    <span>
+        <ul id="natureArr"></ul>
+    </span>
+    
     <h1>选择排序后的数组</h1>
-    <ul id="SelectionSortArr"></ul>
+    <span>
+        <ul id="SelectionSortArr"></ul>
+    </span>
+    
+    <h1>所用的时间</h1>
+    <div id="SelectionSortTime"></div>
     
 
 
@@ -70,7 +86,8 @@
     3. 以此类推，直到排序完成。 -->
     <script src="./SelectionSort.js"></script>
     <script>
-        MyUtilMethod.printArray("SelectionSortArr",SelectionSort(natureArr))
+        MyUtilMethod.printArray("SelectionSortArr",SelectionSort(natureArr));
+        MyUtilMethod.testSort("Selection Sort", SelectionSort, natureArr, "SelectionSortTime")
     </script>
 
     
