@@ -9,10 +9,10 @@
             return arr;
         },
         //打印数组的函数
-        "printArray": function (idName,arrName) {
+        "printArray": function (idName,arr) {
             var arrStr = '';
             for (var i = 0; i < n; i++) {
-                arrStr += (`<li>${arrName[i]}</li>`);
+                arrStr += (`<li>${arr[i]}</li>`);
             }
             $('#' + idName).append(arrStr);
         }
