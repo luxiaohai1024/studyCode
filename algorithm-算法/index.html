@@ -37,11 +37,7 @@
     <script>
         var n = 10000;
         var natureArr = MyUtilMethod.generateRandomArray(n, 0, n);
-        var arrStr = '';
-        for(var i=0; i<n; i++){
-            arrStr += (`<li>${natureArr[i]}</li>`);
-        }
-        $('#natureArr').append(arrStr);
+        MyUtilMethod.printArray('natureArr', 'natureArr')
     </script>
 </body>
 </html>
