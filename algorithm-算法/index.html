@@ -27,11 +27,21 @@
             padding: 10px;
             float: left;
         }
+        h1 {
+            float: left;
+            width: 100%;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <h1>生成随机数组</h1>
     <ul id="natureArr"></ul>
+    <h1>选择排序后的数组</h1>
+    <ul id="SelectionSortArr"></ul>
+    
+
+
     <script src="./SortTestHelper/UtilMethod.js"></script>
     <script src="./scripts/jquery.js"></script>
     <script>
@@ -39,5 +49,30 @@
         var natureArr = MyUtilMethod.generateRandomArray(n, 0, n);
         MyUtilMethod.printArray('natureArr', natureArr)
     </script>
+
+    <!-- 排序算法 -->
+    <!-- 选择排序 -->
+    <!-- 
+     O(n^2)的排序算法
+    作用：
+
+    1. 基础。
+    2. 编码简单，易于实现，是一些简单情景的首选。
+    3. 在一些特殊情况下，简单的排序算法更有效。
+    4. 简单的排序算法思想衍生出复杂的排序算法。
+    5. 作为子过程，改进更复杂的排序算法。
+
+   
+    选择排序 （Selection Sort）
+
+    1. 遍历数组，找到最小（大）的数，放在第一个位置。
+    2. 从第二个位置开始遍历数组，找到最小（大）的数，放在第二个位置。
+    3. 以此类推，直到排序完成。 -->
+    <script src="./SelectionSort.js"></script>
+    <script>
+        MyUtilMethod.printArray("SelectionSortArr",SelectionSort(natureArr))
+    </script>
+
+    
 </body>
 </html>
