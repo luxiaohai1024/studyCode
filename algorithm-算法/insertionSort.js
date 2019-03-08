@@ -20,7 +20,6 @@
     function insertionSort(arr) {
         let newArr = arr.concat();
         let n = arr.length;
-        let middleValue = null;
         for (let i = 1; i < n; i++) {
             //寻找元素arr[i]合适的插入位置
             let copeValue = newArr[i];
